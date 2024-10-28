@@ -65,13 +65,15 @@
                         }
                     }
                 }
-                return ret.Union(operations).ToArray();
+                return ret.Union(operations.ToArray()).ToArray();
             } 
         }
         static void Main(string[] args)
         {
             var c = new Converter();
             Console.WriteLine(string.Join(' ',c.convert("( A + B )  * ( C + D ) - E")));
+
+            Console.WriteLine(string.Join(' ', c.convert(" A + B * ( C + D ) - E")));
         }
     }
 }
